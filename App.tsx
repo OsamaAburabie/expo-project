@@ -10,7 +10,13 @@ import {
 import TrackPlayer, { useActiveTrack } from "react-native-track-player";
 
 import { Button, PlayerControls, Progress, TrackInfo } from "./src/components";
-import { QueueInitialTracksService, SetupService } from "./src/services";
+import {
+  PlaybackService,
+  QueueInitialTracksService,
+  SetupService,
+} from "./src/services";
+
+TrackPlayer.registerPlaybackService(() => PlaybackService);
 
 const App: React.FC = () => {
   const track = useActiveTrack();
